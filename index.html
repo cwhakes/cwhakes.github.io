@@ -19,6 +19,9 @@
 
 <script>
 
+  document.getElementById("canvas").height = 264;
+  document.getElementById("canvas").width = 120;
+
   // Returns an object containing resources that will be used later for drawing
   function resources() {
     let res = {
@@ -55,14 +58,14 @@
     }
 
     function draw_block(x, y) {
-      ctx.drawImage(res.block, x - 4, y - 4);
+      ctx.drawImage(res.block, x, 264 - y - 12);
     }
 
     function draw_score(x) {
       ctx.fillStyle = "orange";
       ctx.textBaseline = "top";
       ctx.font = "20px sans-serif";
-      ctx.fillText('Score: ' + x, 10, 10)
+      ctx.fillText('Score: ' + x, 12, 12)
     }
 
     // The real loading and running of our wasm starts here
